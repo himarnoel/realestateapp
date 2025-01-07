@@ -19,7 +19,7 @@ const signin = () => {
     router.push('/')
   };
   return (
-    <SafeAreaView>
+    <SafeAreaView >
       <ScrollView contentContainerClassName="h-full bg-white">
         <Image
           source={images.onboarding}

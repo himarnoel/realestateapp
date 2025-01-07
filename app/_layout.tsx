@@ -11,6 +11,8 @@ import { useEffect } from "react";
 import "react-native-reanimated";
 import "./global.css";
 import { Redirect } from "expo-router";
+import { Provider } from "react-redux";
+import { store } from "./store";
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -35,5 +37,9 @@ export default function RootLayout() {
     return null;
   }
 
-  return <Stack screenOptions={{ headerShown: false }} />;
+  return (
+    <Provider store={store}>
+      <Stack screenOptions={{ headerShown: false }} />
+    </Provider>
+  );
 }
